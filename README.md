@@ -12,7 +12,7 @@ The folders or scripts listed below in this repo also originate from kaldi/egs/w
 
 # How to use
 1. Edit the 1st line of path.sh such that your Kaldi directory is assigned to $KALDI_ROOT
-2. Run plot_closest.sh 
+2. Run plot_closest.sh \n
    e.g. . plot_closest.sh \<output-dir\> \<lattice-dir\> \<decoder-type\> \<nbest-order\>
 3. Check the plotted image under \<output-dir\>/Nbest/plot
 
