@@ -1,0 +1,10 @@
+# compute-mfcc-feats --verbose=2 --config=conf/mfcc_hires.conf scp,p:joint/make_mfcc_hires/wav_data.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/home/hdd2tb/yjhong/speech2prob/joint/mfccdir_hires/raw_mfcc_data.1.ark,/home/hdd2tb/yjhong/speech2prob/joint/mfccdir_hires/raw_mfcc_data.1.scp 
+# Started at Mon Mar 20 01:55:37 KST 2017
+#
+copy-feats --compress=true ark:- ark,scp:/home/hdd2tb/yjhong/speech2prob/joint/mfccdir_hires/raw_mfcc_data.1.ark,/home/hdd2tb/yjhong/speech2prob/joint/mfccdir_hires/raw_mfcc_data.1.scp 
+compute-mfcc-feats --verbose=2 --config=conf/mfcc_hires.conf scp,p:joint/make_mfcc_hires/wav_data.1.scp ark:- 
+VLOG[2] (compute-mfcc-feats:main():compute-mfcc-feats.cc:178) Processed features for key yj_joint_kr
+LOG (compute-mfcc-feats:main():compute-mfcc-feats.cc:181)  Done 1 out of 1 utterances.
+LOG (copy-feats:main():copy-feats.cc:120) Copied 1 feature matrices.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Mar 20 01:55:37 KST 2017, elapsed time 0 seconds

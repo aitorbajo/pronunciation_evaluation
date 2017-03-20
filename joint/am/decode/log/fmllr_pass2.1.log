@@ -1,0 +1,27 @@
+# lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 "ark:gunzip -c joint/am/decode/lat.tmp.1.gz|" ark:- | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2 joint/am/final.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:joint/data/split1/1/spk2utt joint/am/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:joint/data/split1/1/utt2spk scp:joint/data/split1/1/cmvn.scp scp:joint/data/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats joint/am/final.mat ark:- ark:- | transform-feats --utt2spk=ark:joint/data/split1/1/utt2spk ark:joint/am/decode/pre_trans.1 ark:- ark:- |" ark,s,cs:- ark:joint/am/decode/trans_tmp.1 && compose-transforms --b-is-affine=true ark:joint/am/decode/trans_tmp.1 ark:joint/am/decode/pre_trans.1 ark:joint/am/decode/trans.1 
+# Started at Mon Mar 20 01:55:46 KST 2017
+#
+weight-silence-post 0.01 1:2 joint/am/final.mdl ark:- ark:- 
+gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:joint/data/split1/1/spk2utt joint/am/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:joint/data/split1/1/utt2spk scp:joint/data/split1/1/cmvn.scp scp:joint/data/split1/1/feats.scp ark:- | splice-feats  ark:- ark:- | transform-feats joint/am/final.mat ark:- ark:- | transform-feats --utt2spk=ark:joint/data/split1/1/utt2spk ark:joint/am/decode/pre_trans.1 ark:- ark:- |' ark,s,cs:- ark:joint/am/decode/trans_tmp.1 
+lattice-to-post --acoustic-scale=0.083333 ark:- ark:- 
+lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 'ark:gunzip -c joint/am/decode/lat.tmp.1.gz|' ark:- 
+splice-feats ark:- ark:- 
+apply-cmvn --utt2spk=ark:joint/data/split1/1/utt2spk scp:joint/data/split1/1/cmvn.scp scp:joint/data/split1/1/feats.scp ark:- 
+LOG (apply-cmvn:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 1 utterances, errors on 0
+transform-feats joint/am/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:joint/data/split1/1/utt2spk ark:joint/am/decode/pre_trans.1 ark:- ark:- 
+LOG (transform-feats:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -88.0205 over 172 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (transform-feats:main():transform-feats.cc:158) Overall average logdet is 0 over 172 frames.
+LOG (transform-feats:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.
+LOG (lattice-determinize-pruned:main():lattice-determinize-pruned.cc:117) Done 1 lattices, determinization finished earlier than specified by the beam (or output was empty) on 0 of these.
+LOG (lattice-to-post:main():lattice-to-post.cc:106) Overall average log-like/frame is -4.69524 over 172 frames.  Average acoustic like/frame is -4.63719
+LOG (lattice-to-post:main():lattice-to-post.cc:110) Done 1 lattices.
+LOG (weight-silence-post:main():weight-silence-post.cc:95) Done 1 posteriors.
+WARNING (gmm-est-fmllr:Update():fmllr-diag-gmm.cc:162) Not updating fMLLR since below min-count: count is 81.7189
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:143) For speaker yj, auxf-impr from fMLLR is 0, over 81.7189 frames.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:188) Done 1 files, 0 with no posts, 0 with other errors.
+LOG (gmm-est-fmllr:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 0 over 81.7189 frames.
+compose-transforms --b-is-affine=true ark:joint/am/decode/trans_tmp.1 ark:joint/am/decode/pre_trans.1 ark:joint/am/decode/trans.1 
+# Accounting: time=1 threads=1
+# Ended (code 0) at Mon Mar 20 01:55:47 KST 2017, elapsed time 1 seconds

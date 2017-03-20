@@ -1,0 +1,2 @@
+compute-cmvn-stats --spk2utt=ark:joint/data/spk2utt scp:joint/data/feats.scp ark,scp:/home/hdd2tb/yjhong/speech2prob/joint/mfccdir_hires/cmvn_data.ark,/home/hdd2tb/yjhong/speech2prob/joint/mfccdir_hires/cmvn_data.scp 
+LOG (compute-cmvn-stats:main():compute-cmvn-stats.cc:171) Done accumulating CMVN stats for 1 utterances; 0 had errors.

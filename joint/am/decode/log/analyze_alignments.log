@@ -1,0 +1,21 @@
+# gunzip -c joint/am/decode/phone_stats.*.gz | steps/diagnostic/analyze_phone_length_stats.py joint/graph 
+# Started at Mon Mar 20 01:55:58 KST 2017
+#
+At utterance begin, sil accounts for 100.0% of phone occurrences, with duration (median, mean, 95-percentile) is (57,57.0,57) frames.
+At utterance end, sil accounts for 100.0% of phone occurrences, with duration (median, mean, 95-percentile) is (3,3.0,3) frames.
+Overall, nonsilence accounts for 78.6% of phone occurrences, with duration (median, mean, 95-percentile) is (6,6.8,11) frames.
+Overall, sil accounts for 21.4% of phone occurrences, with duration (median, mean, 95-percentile) is (3,32.3,37) frames.
+Overall, cl accounts for 14.3% of phone occurrences, with duration (median, mean, 95-percentile) is (4,5.0,4) frames.
+Overall, hh accounts for 14.3% of phone occurrences, with duration (median, mean, 95-percentile) is (7,9.0,7) frames.
+Overall, t accounts for 14.3% of phone occurrences, with duration (median, mean, 95-percentile) is (4,5.5,4) frames.
+Overall, ax accounts for 7.1% of phone occurrences, with duration (median, mean, 95-percentile) is (6,6.0,6) frames.
+Overall, en accounts for 7.1% of phone occurrences, with duration (median, mean, 95-percentile) is (16,16.0,16) frames.
+Overall, ix accounts for 7.1% of phone occurrences, with duration (median, mean, 95-percentile) is (3,3.0,3) frames.
+Overall, iy accounts for 7.1% of phone occurrences, with duration (median, mean, 95-percentile) is (5,5.0,5) frames.
+Overall, l accounts for 7.1% of phone occurrences, with duration (median, mean, 95-percentile) is (6,6.0,6) frames.
+The optional-silence phone sil occupies 56.4% of frames overall 
+Limiting the stats to the 65.1% of frames not covered by an utterance-[begin/end] phone, optional-silence sil occupies 33.0% of frames.
+Assuming 100 frames per second, the alignments represent 0.0 hours of data, or 0.0 hours if sil frames are excluded.
+Utterance-internal optional-silences sil comprise 8.3% of utterance-internal phones, with duration (median, mean, 95-percentile) = (3,37.0,3)
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Mar 20 01:55:58 KST 2017, elapsed time 0 seconds
