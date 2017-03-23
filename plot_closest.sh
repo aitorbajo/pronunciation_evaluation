@@ -6,7 +6,7 @@ chmod +x chunk_nbest.py
 chmod +x plot_best.py
 
 
-#### [USAGE] . plot_closest.sh <dir-to-store-all> <lattice-dir> <decoder-type> <nbest> 
+#### [USAGE] . plot_closest.sh <dir-to-store-all> <decoder-type> <nbest> 
 #### e.g. . plot_closest.sh temper uniG 20 
 
 # configuration
