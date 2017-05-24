@@ -1,6 +1,5 @@
 # Progress report on the tSNE backend 
-
-
+this is the daily progress report on the tSNE backend development
 ## 5/25/Wed
 **tSNE between-speaker consistency evaluation**
 
